@@ -2,7 +2,8 @@
     aurelia
         .use
         .standardConfiguration()
-        .developmentLogging();
+        .developmentLogging()
+        .plugin("aurelia-validation");
 
     aurelia.start().then(a => a.setRoot());   
 };

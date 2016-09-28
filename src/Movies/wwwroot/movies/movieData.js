@@ -10,7 +10,13 @@ export class MovieData {
     }
 
     getById(id) {
-        return null;
+        return this.http.get(baseUrl)
+                .then(response => {
+                    var movie =  response.content.filter(function (el) {
+                        return el.id == id;
+                    });
+                    return movie[0];
+                });
     }
 
     getAll() {
@@ -18,5 +24,10 @@ export class MovieData {
                 .then(response => {
                     return response.content;
                 });
+    }
+
+    save(movie) {
+        //// return this.http.put(baseUrl, movie);
+        console.log(movie.id + "/" + movie.title + "/" + movie.releaseYear);
     }
 }

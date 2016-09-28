@@ -8,9 +8,9 @@ export class App {
                 title:"List", nav:true, name:"home" },
             { route:["about"], moduleId:"about/about", 
             title:"About", nav:true },
-            { route:["details/:id"], moduleId:"movies/details", 
-            title:"Details", nav:false, name:"details" },
-
+            { route:["details/:id"], moduleId:"movies/details", name:"details" },
+            { route:["edit/:id"], moduleId:"movies/edit", name:"edit" },
+            { route:["create"], moduleId:"movies/edit" }
         ]);
     }
 }

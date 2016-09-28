@@ -1,14 +1,14 @@
-﻿import {inject}  from "aurelia-framework";
+﻿import {inject} from "aurelia-framework";
 import {MovieData} from "./movieData";
 
-@inject{MovieData}
+@inject(MovieData)
 export class Details {
     constructor(movieData) {
         this.data = movieData;
     }
 
     activate(params) {
-        this.data.getById(params.id)
+        return this.data.getById(params.id)
             .then(movie => this.movie = movie);
     }
 }
